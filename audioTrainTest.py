@@ -280,7 +280,7 @@ def featureAndTrainRegression(dirName, mtWin, mtStep, stWin, stStep, modelType, 
     for c in CSVs:                                                  # for each CSV
         curRegressionLabels = numpy.zeros((len(fileNames, )))       # read filenames, map to "fileNames" and append respective values in the regressionLabels
         with open(c, 'rb') as csvfile:
-            CSVreader = csv.reader(csvfile, delimiter=',', quotechar='|')
+            CSVreader = csv.reader(csvfile, delimiter=',', quotechar='|', newline='')
             for row in CSVreader:
                 if len(row) == 2:
                     if row[0]+".wav" in fileNames:

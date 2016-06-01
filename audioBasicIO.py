@@ -14,7 +14,7 @@ def convertDirMP3ToWav(dirName, Fs, nC, useMp3TagsAsName = False):
 	types = (dirName+os.sep+'*.mp3',) # the tuple of file types
 	filesToProcess = []
 
-	tag = eyeD3.Tag()	
+	tag = eyed3.Tag()	
 
 	for files in types:
 		filesToProcess.extend(glob.glob(files))		

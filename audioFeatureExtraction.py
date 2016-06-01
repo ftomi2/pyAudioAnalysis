@@ -14,7 +14,6 @@ from scipy.signal import fftconvolve
 from matplotlib.mlab import find
 import matplotlib.pyplot as plt
 from scipy import linalg as la
-from . import audioTrainTest as aT
 from . import audioBasicIO
 from . import utilities
 from scipy.signal import lfilter, hamming
@@ -536,7 +535,7 @@ def stFeatureExtraction(signal, Fs, Win, Step):
     N = len(signal)                                # total number of samples
     curPos = 0
     countFrames = 0
-    nFFT = Win / 2
+    nFFT = int(Win / 2)
 
     [fbank, freqs] = mfccInitFilterBanks(Fs, nFFT)                # compute the triangular filter banks used in the mfcc calculation
     nChroma, nFreqsPerChroma = stChromaFeaturesInit(nFFT, Fs)
