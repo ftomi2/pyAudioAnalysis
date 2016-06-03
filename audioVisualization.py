@@ -86,7 +86,7 @@ def chordialDiagram(fileStr, SM, Threshold, names, namesCategories):
 	for i in range(SM2.shape[0]):
 		M = Threshold
 #		a = np.sort(SM2[i,:])[::-1]
-#		M = np.mean(a[0:int(SM2.shape[1]/3+1)])
+#		M = np.mean(a[0:int(SM2.shape[1]//3+1)])
 		SM2[i,SM2[i,:]<M] = 0;
 
 	dirChordial = fileStr + "_Chordial"

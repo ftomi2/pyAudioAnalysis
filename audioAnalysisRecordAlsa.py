@@ -38,7 +38,7 @@ def recordAudioSegments(RecordPath, BLOCKSIZE):
 	while 1:
 			l,data = inp.read()		   
 		    	if l:
-				for i in range(len(data)/2):
+				for i in range(len(data)//2):
 					curWindow.append(audioop.getsample(data, 2, i))
 		
 				if (len(curWindow)+len(midTermBuffer)>midTermBufferSize):

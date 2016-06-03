@@ -268,7 +268,7 @@ def stChromaFeatures(X, fs, nChroma, nFreqsPerChroma):
     newD = int(numpy.ceil(C.shape[0] / 12.0) * 12)
     C2 = numpy.zeros((newD, ))
     C2[0:C.shape[0]] = C
-    C2 = C2.reshape(C2.shape[0]/12, 12)
+    C2 = C2.reshape(C2.shape[0]//12, 12)
     #for i in range(12):
     #    finalC[i] = numpy.sum(C[i:C.shape[0]:12])
     finalC = numpy.matrix(numpy.sum(C2, axis=0)).T
@@ -490,7 +490,7 @@ def stSpectogram(signal, Fs, Win, Step, PLOT=False):
         FreqTicksLabels = [str(Fs / 2 - int((f * Fs) / (2 * nfft))) for f in FreqTicks]
         ax.set_yticks(FreqTicks)
         ax.set_yticklabels(FreqTicksLabels)
-        TStep = countFrames/3
+        TStep = countFrames // 3
         TimeTicks = list(range(0, countFrames, TStep))
         TimeTicksLabels = ['%.2f' % (float(t * Step) / Fs) for t in TimeTicks]
         ax.set_xticks(TimeTicks)
@@ -679,7 +679,7 @@ def stFeatureSpeed(signal, Fs, Win, Step):
 #        R = numpy.correlate(frame, frame, mode='full')
         stFeatures.append(stHarmonic(x, Fs))
 #        for i in range(len(X)):
-            #if (i < (len(X) / 8)) and (i > (len(X)/40)):
+            #if (i < (len(X) / 8)) and (i > (len(X)//40)):
             #    Ex += X[i]*X[i]
             #El += X[i]*X[i]
 #        stFeatures.append(Ex / El)
