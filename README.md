@@ -1,5 +1,7 @@
 # pyAudioAnalysis: A Python Audio Analysis Library
 
+In this fork I want to port pyAudioAnalysis to Python3.
+
 pyAudioAnalysis is a Python library covering a wide range of audio analysis tasks, including: feature extraction, classification, segmentation and visualization. 
  The user can perform the following tasks:
  * Extract a wide range of audio features and representations (e.g. spectrogram, chromagram)
